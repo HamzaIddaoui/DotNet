@@ -1,0 +1,116 @@
+﻿@page
+@model ProductWebapp.Pages.Products.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!-- Add Bootstrap Icons CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
+<p>
+    <a asp-page="Create" class="btn btn-primary">
+        <i class="bi bi-database-add"></i>
+        Add
+    </a>
+</p>
+<p>
+    <form>
+        <label> Filter by Title : </label>
+        <input type="text" asp-for="Searchstring"/>
+        <button type="submit" class="btn btn-warning">
+            <i class="bi bi-funnel"></i>
+        </button>
+    </form>
+
+</p>
+<div class="container">
+    <div class="row">
+        <h1>@Model.cart.name</h1>
+        @Html.DisplayFor(modelItem => Model.cart.products.Count)
+        @Html.DisplayFor(modelItem => Model.cart.name)
+        @foreach(var product in Model.cart.products)
+        {
+            <div>
+                @Html.DisplayFor(modelItem => product.Title)
+            </div>
+        }
+    </div>
+    <div class="row"> 
+        @foreach( var item in Model.Product)
+        {
+            <div class="card col-3 mt-3 flex-column justify-content-between" style="height: 250px; background-image:url(images/@item.imagePath); background-repeat: no-repeat; background-size:cover; background-position-x:center; background-position-y:center;">
+                <div class="text-center row d-flex justify-content-end">
+                    <span class="col-2 badge bg-info">
+                        @Html.DisplayFor(modelItem => item.Price) $
+                    </span>
+                </div>
+                <div class="text-center">
+                </div>
+                <div class="mt-5 row d-flex justify-content-between">
+                    <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-success col-2">
+                        <i class="bi bi-pencil-square"></i>
+                    </a>
+                    <form mehtod="post" asp-page-handler="addToCart(@item.Id)" class="col-2">
+                        <button class="btn btn-warning" type="submit">
+                            <i class="bi bi-cart-check"></i>
+
+                        </button>
+                    </form>
+                    
+                    <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-danger col-2">
+                        <i class="bi bi-x-circle"></i>
+                    </a>
+                    <a asp-page="./Details" asp-route-id="@item.Id" class="btn btn-primary col-2">
+                        <i class="bi bi-three-dots"></i>
+                    </a>
+                    
+                </div>
+            </div>
+        }
+
+    </div>
+
+</div>
+
+@* <table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Product[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product[0].ReleaseDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product[0].Genre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product[0].Price)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Product) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReleaseDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Genre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-success">Edit</a> 
+                <a asp-page="./Details" asp-route-id="@item.Id" class="btn btn-primary">Details</a> 
+                <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table> *@
