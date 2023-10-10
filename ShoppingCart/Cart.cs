@@ -10,7 +10,7 @@ namespace ProductWebapp.ShoppingCart
         private Cart() { }
         public static Cart Instance()
         {
-            if (_instance == null) return new Cart();
+            if (_instance == null) _instance = new Cart();
             return _instance;
         }
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -13,10 +14,11 @@ using ProductWebapp.ShoppingCart;
 
 namespace ProductWebapp.Pages.Products
 {
+    [Authorize(Roles = "Admin")]
     public class IndexModel : PageModel
     {
         private readonly ProductWebapp.Data.ProductWebappContext _context;
-        public Cart cart { get; set; }  = Cart.Instance();
+        public ShoppingCart.Cart cart { get; set; }  = ShoppingCart.Cart.Instance();
 
         public IndexModel(ProductWebapp.Data.ProductWebappContext context)
         {
@@ -30,7 +32,6 @@ namespace ProductWebapp.Pages.Products
         public SelectList? Genres { get; set; }
         [BindProperty(SupportsGet = true)]
         public string? ProductGenre { get; set; }
-
 
         public async Task OnGetAsync()
         {
@@ -47,6 +48,7 @@ namespace ProductWebapp.Pages.Products
             Product = await products.ToListAsync();
         }
 
+        /**
         public async Task<IActionResult> OnPostaddToCart(int id)
         {
             var product = _context.Product.FirstOrDefault(p => p.Id == id);
@@ -55,6 +57,7 @@ namespace ProductWebapp.Pages.Products
             invoker.addCommand(addToCart);
             return Page();
         }
+        **/
 
   
     }

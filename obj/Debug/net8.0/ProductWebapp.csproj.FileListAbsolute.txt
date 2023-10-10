@@ -506,3 +506,4 @@ C:\Users\pc\source\repos\ProductWebapp\ProductWebapp\obj\Debug\net8.0\refint\Pro
 C:\Users\pc\source\repos\ProductWebapp\ProductWebapp\obj\Debug\net8.0\ProductWebapp.pdb
 C:\Users\pc\source\repos\ProductWebapp\ProductWebapp\obj\Debug\net8.0\ProductWebapp.genruntimeconfig.cache
 C:\Users\pc\source\repos\ProductWebapp\ProductWebapp\obj\Debug\net8.0\ref\ProductWebapp.dll
+C:\Users\pc\source\repos\ProductWebapp\ProductWebapp\obj\Debug\net8.0\ProductWebapp.sourcelink.json

@@ -7,7 +7,7 @@
         private Invoker() { }
         public static Invoker Instance()
         {
-            if(_instance == null) return new Invoker();
+            if(_instance == null) _instance = new Invoker();
             return _instance;
         }
 

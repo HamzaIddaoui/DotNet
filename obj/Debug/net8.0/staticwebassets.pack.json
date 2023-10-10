@@ -13,8 +13,20 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\pc\\source\\repos\\ProductWebapp\\ProductWebapp\\wwwroot\\images\\2qq3yx3o.x1r.avif",
+      "PackagePath": "staticwebassets\\images\\2qq3yx3o.x1r.avif"
+    },
+    {
       "Id": "C:\\Users\\pc\\source\\repos\\ProductWebapp\\ProductWebapp\\wwwroot\\images\\dquavbky.e5q.webp",
       "PackagePath": "staticwebassets\\images\\dquavbky.e5q.webp"
+    },
+    {
+      "Id": "C:\\Users\\pc\\source\\repos\\ProductWebapp\\ProductWebapp\\wwwroot\\images\\fivm3cyr.bus.jpg",
+      "PackagePath": "staticwebassets\\images\\fivm3cyr.bus.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\source\\repos\\ProductWebapp\\ProductWebapp\\wwwroot\\images\\mvwqp4sj.2yo.avif",
+      "PackagePath": "staticwebassets\\images\\mvwqp4sj.2yo.avif"
     },
     {
       "Id": "C:\\Users\\pc\\source\\repos\\ProductWebapp\\ProductWebapp\\wwwroot\\images\\notfound.png",
@@ -27,6 +39,10 @@
     {
       "Id": "C:\\Users\\pc\\source\\repos\\ProductWebapp\\ProductWebapp\\wwwroot\\images\\test.png",
       "PackagePath": "staticwebassets\\images\\test.png"
+    },
+    {
+      "Id": "C:\\Users\\pc\\source\\repos\\ProductWebapp\\ProductWebapp\\wwwroot\\images\\ywvtcm12.e5u.jpeg",
+      "PackagePath": "staticwebassets\\images\\ywvtcm12.e5u.jpeg"
     },
     {
       "Id": "C:\\Users\\pc\\source\\repos\\ProductWebapp\\ProductWebapp\\wwwroot\\js\\site.js",

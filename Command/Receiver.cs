@@ -10,7 +10,7 @@ namespace ProductWebapp.Command
         private Receiver() { }
         public static Receiver Instance()
         {
-            if(_instance == null) return new Receiver();
+            if(_instance == null) _instance = new Receiver();
             return _instance;
         }
 

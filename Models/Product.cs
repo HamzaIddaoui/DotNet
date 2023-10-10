@@ -16,6 +16,7 @@ namespace ProductWebapp.Models
         [NotMapped]
         public IFormFile imageFile { get; set; }
 
+        public Product() { }
         public Product(string title)
         {
             title = title;
