@@ -9,8 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddDbContext<ProductWebappContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("ProductWebappContext") ?? throw new InvalidOperationException("Connection string 'ProductWebappContext' not found.")));
-
-
+builder.Services.AddControllers();
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
@@ -43,14 +42,15 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
-
-
+app.MapControllers();
 app.MapRazorPages();
 
 app.Run();
